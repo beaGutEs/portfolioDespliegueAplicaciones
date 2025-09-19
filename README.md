@@ -1,10 +1,7 @@
-# portfolioDespliegueAplicaciones
+## REPOSITORIO BEATRIZ GUTIÉRREZ ESCUDERO
 Portfolio para el módulo de Despliegue de Aplicaciones Web del 2º curso del CFGS de DAW.
 
-### TEMA 1
-- DIARIO T1
-- EJERCICIOS T1
+### UNIDAD DIDÁCTICA 1 - GITHUB Y MARKDOWN
+- [DIARIO UD1](https://github.com/beaGutEs/portfolioDespliegueAplicaciones/blob/main/UD1%3A%20GitHub%20y%20MarkDown/diario_UD1.md)
+- [EJERCICIOS UD1](https://github.com/beaGutEs/portfolioDespliegueAplicaciones/blob/main/UD1%3A%20GitHub%20y%20MarkDown/enlaces_UD1.md)
 
-### TEMA 2
-- DIARIO T2
-- EJERCICIOS T2
