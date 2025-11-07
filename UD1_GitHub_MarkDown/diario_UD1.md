@@ -1,25 +1,35 @@
-## Diario de Aprendizaje - UD1: GitHub y MarkDown
+## Diario de Aprendizaje - UD1: GitHub y Markdown
 
-## Qué he aprendido
+### Qué he aprendido
 
-Durante esta primera unidad he aprendido a utilizar GitHub como sistema de control de versiones para gestionar proyectos de forma eficiente. He comprendido cómo crear un repositorio, subir archivos, hacer commits, crear ramas y fusionarlas mediante pull requests. También he aprendido a gestionar colaboradores y configurar los permisos de un repositorio.
+En esta unidad he aprendido a utilizar GitHub como sistema de control de versiones para gestionar proyectos de forma eficiente.  
+He comprendido cómo crear repositorios, subir archivos, hacer commits, crear ramas y fusionarlas mediante pull requests. También aprendí a configurar permisos, añadir colaboradores y gestionar correctamente la accesibilidad del repositorio.
 
-Además, he aprendido a redactar documentos utilizando el lenguaje de marcado Markdown, que me permite estructurar y presentar la información de forma clara y profesional dentro de GitHub u otros entornos compatibles.
+Además he aprendido a redactar documentación técnica utilizando Markdown, lo que facilita estructurar la información de forma profesional.
 
-## Qué no entiendo
+También he aprendido a evaluar herramientas de generación de documentación (Javadoc / JSDoc / Sphinx / Docusaurus / MkDocs / Swagger) y he visto que no todas sirven para lo mismo ni al mismo nivel.  
+Ahora comprendo que la documentación también forma parte del control de versiones y que puede automatizarse.
 
-Aunque he entendido el funcionamiento básico de GitHub desde la interfaz web, todavía me cuesta comprender cómo se gestionan estos mismos procesos utilizando la línea de comandos (Git). Me gustaría profundizar en cómo se conectan Git y GitHub, y cómo se trabaja localmente en un proyecto para luego sincronizarlo con el repositorio remoto.
+### Qué no entiendo
 
-## Qué es lo que más me ha gustado y qué es lo que menos
+Todavía me cuesta comprender bien algunas diferencias reales al trabajar Git desde terminal vs desde interfaz web.  
+Además todavía tengo dudas en cómo elegir qué herramienta de documentación es la mejor según el tipo de proyecto y tecnología.
 
-Lo que más me ha gustado ha sido descubrir cómo GitHub permite controlar el historial de cambios de un proyecto y trabajar de forma colaborativa. Me parece una herramienta muy potente para trabajar en equipo y mantener una documentación clara y accesible.
+### Qué es lo que más me ha gustado y qué es lo que menos
 
-También me ha parecido muy útil aprender Markdown. Es un lenguaje de marcado sencillo, pero muy práctico para crear documentación técnica clara y bien estructurada, sin necesidad de herramientas complejas. Me ha sorprendido lo fácil que es generar títulos, listas, enlaces y tablas con solo unos pocos símbolos.
+Lo que más me ha gustado ha sido ver cómo la documentación puede generarse automáticamente desde comentarios del código, y cómo eso mejora muchísimo el mantenimiento a largo plazo.
 
-Lo que menos me ha gustado ha sido lo confuso que puede resultar al principio entender la diferencia entre ramas y commits, sobre todo si no se tiene experiencia previa con control de versiones.
+También me pareció muy útil ver el .gitignore como mecanismo de seguridad real, no solo algo técnico. Ahora entiendo que subir cosas sensibles puede comprometer un proyecto.
 
-## Qué más me gustaría saber relacionado con la Unidad
+Lo que menos me ha gustado es que hay demasiadas herramientas de documentación y es difícil elegir una sola. También lleva tiempo entender bien las diferencias entre permisos de GitHub y sus roles.
 
-Me gustaría profundizar en el uso de Git desde la línea de comandos, ya que en esta unidad hemos trabajado principalmente con la interfaz web de GitHub. Quiero entender cómo se realizan los mismos procesos (crear repositorios, hacer commits, crear ramas, hacer merges, etc.) usando comandos, y cómo se sincroniza un repositorio local con GitHub.
+### Qué más me gustaría saber relacionado con la Unidad
 
-También me interesa aprender cómo se puede automatizar el trabajo dentro de GitHub mediante acciones (GitHub Actions), así como descubrir otras herramientas que se integren con GitHub para mejorar la gestión de proyectos, como tableros Kanban, sistemas de control de versiones con múltiples colaboradores o integración continua.
+Quiero profundizar más en:
+
+- cómo crear pipelines para generar documentación automáticamente
+- GitHub Actions aplicado a documentación
+- cómo definir políticas de seguridad profesionales en repositorios reales
+- cómo automatizar revisiones con PR templates
+
+Además me interesa integrar documentación con despliegue real en web y ver cómo se trabaja en equipos grandes donde documentación no es algo opcional sino obligatorio desde el primer commit.
