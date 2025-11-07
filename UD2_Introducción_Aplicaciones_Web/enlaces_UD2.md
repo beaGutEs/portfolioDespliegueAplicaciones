@@ -1,6 +1,6 @@
 ## Enlaces actividades UD2
 
-- U2_E1 Presentación / exposición → **pendiente**  
+- [U2_E1 Presentación / exposición](https://github.com/beaGutEs/portfolioDespliegueAplicaciones/blob/UT2_Introduccion_Aplicaciones_Web/UD2_Introducci%C3%B3n_Aplicaciones_Web/DescubriendoLaWeb_GutierrezBeatriz_RamosAroa_RinconMelody.pdf)
   - Presentación sobre 3 temas elegidos entre: HTTP, Apache, arquitecturas web, FTP, tipos de alojamiento, SSH, etc. 5 minutos por persona.
 
 - U2_E2 Instalación Ubuntu en VirtualBox → **pendiente**  
