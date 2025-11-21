@@ -101,3 +101,11 @@ Para garantizar la recuperación del proyecto en caso de pérdida de datos o err
   - En proyectos críticos, puede ser recomendable disponer de copias fuera de GitHub (por ejemplo, en otro servidor o almacenamiento seguro).
 
 Estas medidas, combinadas con el uso correcto de `.gitignore` y de los permisos en GitHub, ayudan a mantener el proyecto seguro, trazable y recuperable ante posibles incidencias.
+
+## Accesibilidad del repositorio y niveles de permiso
+
+El repositorio incluye un colaborador añadido a través de la sección “Manage access” de GitHub. En los repositorios personales, GitHub asigna automáticamente a los colaboradores el rol de “Collaborator”, que corresponde internamente a un permiso de escritura (“Write”). En esta modalidad, la interfaz no permite modificar los roles del colaborador ni asignar permisos de lectura o administración. Las únicas acciones disponibles desde la interfaz son añadir nuevos colaboradores o eliminarlos.
+
+Aunque GitHub no muestre explícitamente el nivel de permiso asignado, la documentación oficial indica que el rol “Collaborator” en repositorios personales implica acceso de escritura. Por tanto, el colaborador puede realizar acciones como clonar el repositorio, crear nuevas ramas y subir cambios mediante `git push`, siempre que no se modifique la configuración del repositorio o las reglas de protección de ramas.
+
+Para otros niveles de permiso (Read, Maintain, Admin), GitHub requiere organizaciones o repositorios con funcionalidades avanzadas, por lo que dichos roles no están disponibles en este tipo de repositorio personal. Aun así, se ha revisado la estructura de permisos desde la interfaz de GitHub y se ha documentado su significado a nivel teórico, con el fin de comprender qué nivel de permiso sería adecuado para cada tipo de rol dentro de un equipo de desarrollo.
