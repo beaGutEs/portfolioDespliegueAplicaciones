@@ -9,7 +9,7 @@
 - [U1_E3 Evaluación comparativa de generadores de documentación](https://github.com/beaGutEs/portfolioDespliegueAplicaciones/blob/main/UD1_GitHub_MarkDown/ejercicios_UD1/%20%20%20%20evaluacion_uso_generador_documentacion/GeneradorDocumentacionEvaluacion.md)
   - Investigación comparativa de 3 herramientas (Javadoc, JSDoc, Sphinx/MkDocs/other). Se analiza facilidad de uso, curva de aprendizaje, salidas generadas, integración con proyectos reales y aplicabilidad para entornos colaborativos.
 
-- U1_E4 Aplicación práctica: generación de documentación del proyecto del curso anterior → **pendiente**  
+- [U1_E4 Aplicación práctica: generación de documentación](https://github.com/beaGutEs/portfolioDespliegueAplicaciones/tree/main/UD1_GitHub_MarkDown/ejercicios_UD1/generadores_documentacion)
   - Documentación generada automáticamente desde el código. Exportación en HTML / PDF / Markdown.
 
 - U1_E5 Seguridad y accesibilidad en Control de Versiones → **pendiente**  
