@@ -1,0 +1,46 @@
+# Entornos virtuales de Python
+venv/
+.venv/
+env/
+.env/
+
+# Archivos de configuración local y credenciales
+.env.local
+.env.*
+*.secret
+*.key
+*.pem
+config.local.*
+settings.local.*
+secrets.json
+
+# Archivos generados por MkDocs (no se versionan)
+site/
+
+# Cachés de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Logs y temporales
+*.log
+*.tmp
+*.temp
+
+# Archivos del sistema / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Binarios y builds
+dist/
+build/
+*.exe
+*.dll
+*.so
+*.zip
+*.tar
+*.tar.gz
