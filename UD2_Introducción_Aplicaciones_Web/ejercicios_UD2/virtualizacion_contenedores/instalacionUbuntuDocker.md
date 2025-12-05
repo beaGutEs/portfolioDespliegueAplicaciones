@@ -18,17 +18,17 @@ Se creó una nueva máquina virtual con los parámetros recomendados:
 * **Disco virtual:** 50 GB (VDI, crecimiento dinámico)
 * **Red:** NAT
 
-**Captura:**
-![Creación de la máquina virtual](capturas/01_creacion_vm.png)
+<img width="1366" height="724" alt="1" src="https://github.com/user-attachments/assets/a44bb54d-7ee6-4b12-a41e-9a9b9b6c4017" />
 
----
+<img width="1366" height="727" alt="2" src="https://github.com/user-attachments/assets/0fb1e9c5-8070-4701-8ed7-c3a53c78326f" />
 
 ## 1.2. Configuración de recursos de hardware
 
 Se asignó memoria RAM, CPU y tamaño del disco virtual según los requisitos de la práctica.
 
-**Captura:**
-![Configuración de la VM](capturas/02_configuracion_recursos.png)
+<img width="1366" height="730" alt="3" src="https://github.com/user-attachments/assets/1553c0e2-dd78-4847-89bc-09dfe81672ab" />
+
+<img width="1366" height="728" alt="4" src="https://github.com/user-attachments/assets/adab767f-4dae-49f0-86bf-db4afa795c15" />
 
 ---
 
@@ -36,17 +36,15 @@ Se asignó memoria RAM, CPU y tamaño del disco virtual según los requisitos de
 
 Se inició la máquina utilizando la ISO oficial de Ubuntu 24.04 LTS y se completó el asistente de instalación gráfica.
 
-**Captura:**
-![Instalador de Ubuntu](capturas/03_instalador_ubuntu.png)
+<img width="1366" height="729" alt="5" src="https://github.com/user-attachments/assets/cbaf8726-bc9d-4656-ad20-33df84a26133" />
 
----
+<img width="1366" height="726" alt="7" src="https://github.com/user-attachments/assets/67450778-0355-412e-9b95-c778e11d2f4a" />
 
 ## 1.4. Escritorio de Ubuntu después de la instalación
 
 Una vez instalado Ubuntu, se accedió al escritorio para comprobar su funcionamiento.
 
-**Captura:**
-![Escritorio de Ubuntu instalado](capturas/04_escritorio_ubuntu.png)
+<img width="1366" height="728" alt="10" src="https://github.com/user-attachments/assets/723f8ffe-6597-448e-aae2-b7729a77fe7c" />
 
 ---
 
