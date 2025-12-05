@@ -1,4 +1,4 @@
-# **Informe Técnico – Virtualización y Contenedores**
+# Informe Técnico – Virtualización y Contenedores
 
 **Módulo:** Despliegue de Aplicaciones Web
 **Curso:** 2º DAW
@@ -7,24 +7,31 @@
 
 # 1. Instalación de Ubuntu en VirtualBox
 
-A continuación se describen los pasos realizados para instalar Ubuntu 24.04 LTS en una máquina virtual con VirtualBox.
+En esta parte de la práctica he instalado **Ubuntu 24.04.3 LTS** dentro de una máquina virtual creada con VirtualBox. A continuación explico los pasos que he seguido.
+
+---
 
 ## 1.1. Creación de la máquina virtual
 
-Se creó una nueva máquina virtual con los parámetros recomendados:
+Primero creé una nueva máquina virtual con estos parámetros:
 
 * **Nombre:** Ubuntu-DAW2DAW
+* **Tipo:** Linux
+* **Versión:** Ubuntu (64-bit)
 * **RAM:** 4096 MB
-* **Disco virtual:** 50 GB (VDI, crecimiento dinámico)
+* **Disco:** 50 GB (VDI, expansión dinámica)
 * **Red:** NAT
+
 
 <img width="1366" height="724" alt="1" src="https://github.com/user-attachments/assets/a44bb54d-7ee6-4b12-a41e-9a9b9b6c4017" />
 
 <img width="1366" height="727" alt="2" src="https://github.com/user-attachments/assets/0fb1e9c5-8070-4701-8ed7-c3a53c78326f" />
 
+---
+
 ## 1.2. Configuración de recursos de hardware
 
-Se asignó memoria RAM, CPU y tamaño del disco virtual según los requisitos de la práctica.
+Ajusté la memoria RAM, los procesadores, el almacenamiento y la red antes de iniciar la instalación.
 
 <img width="1366" height="730" alt="3" src="https://github.com/user-attachments/assets/1553c0e2-dd78-4847-89bc-09dfe81672ab" />
 
@@ -32,17 +39,19 @@ Se asignó memoria RAM, CPU y tamaño del disco virtual según los requisitos de
 
 ---
 
-## 1.3. Instalación del sistema operativo Ubuntu
+## 1.3. Instalación de Ubuntu
 
-Se inició la máquina utilizando la ISO oficial de Ubuntu 24.04 LTS y se completó el asistente de instalación gráfica.
+Arranqué la máquina con la ISO de **Ubuntu 24.04.3 LTS** y seguí el asistente de instalación hasta completarla.
 
 <img width="1366" height="729" alt="5" src="https://github.com/user-attachments/assets/cbaf8726-bc9d-4656-ad20-33df84a26133" />
 
 <img width="1366" height="726" alt="7" src="https://github.com/user-attachments/assets/67450778-0355-412e-9b95-c778e11d2f4a" />
 
-## 1.4. Escritorio de Ubuntu después de la instalación
+---
 
-Una vez instalado Ubuntu, se accedió al escritorio para comprobar su funcionamiento.
+## 1.4. Escritorio tras la instalación
+
+Cuando terminó la instalación y reinicié la máquina, comprobé que Ubuntu arrancaba correctamente.
 
 <img width="1366" height="728" alt="10" src="https://github.com/user-attachments/assets/723f8ffe-6597-448e-aae2-b7729a77fe7c" />
 
@@ -50,137 +59,167 @@ Una vez instalado Ubuntu, se accedió al escritorio para comprobar su funcionami
 
 # 2. Instalación de Docker en Ubuntu
 
-## 2.1. Actualización del sistema
+Después instalé Docker Desktop dentro de Ubuntu para poder trabajar con contenedores.
+
+## 2.1. Actualizar paquetes del sistema
 
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
-## 2.2. Instalación de dependencias necesarias
+## 2.2. Instalar dependencias necesarias
 
 ```bash
 sudo apt install ca-certificates curl gnupg -y
 ```
 
-## 2.3. Instalación de Docker Desktop mediante script oficial
+## 2.3. Instalar Docker usando el script oficial
 
 ```bash
 curl -fsSL https://get.docker.com | sudo sh
 sudo apt install docker-desktop -y
 ```
 
-## 2.4. Verificación de la instalación
+---
 
-### Comprobar versión:
+## 2.4. Comprobación del funcionamiento
+
+### Versión de Docker
 
 ```bash
 docker --version
 ```
 
-**Captura:**
-![docker version](capturas/05_docker_version.png)
+### 📸 Captura necesaria
 
-### Ejecutar contenedor de prueba:
+Debe verse el comando y la versión instalada de Docker.
+
+```
+![Docker versión](capturas/05_docker_version.png)
+```
+
+### Contenedor de prueba
 
 ```bash
 docker run hello-world
 ```
 
-**Captura:**
-![hello world docker](capturas/06_docker_hello_world.png)
+### 📸 Captura necesaria
+
+Debe verse el mensaje “Hello from Docker!”.
+
+```
+![Hello world Docker](capturas/06_docker_hello_world.png)
+```
 
 ---
 
-# 3. Contenedores Docker
+# 3. Creación y ejecución de contenedores
 
-## 3.1. Servidor web Nginx
+## 3.1. Servidor web con Nginx
 
-Comando ejecutado:
+Comando:
 
 ```bash
 docker run -d -p 8080:80 --name webserver nginx
 ```
 
-Acceso en el navegador:
+Acceso desde el navegador:
 **[http://localhost:8080](http://localhost:8080)**
 
-**Captura:**
+### 📸 Captura necesaria
+
+Debe verse la página de bienvenida de Nginx.
+
+```
 ![Nginx funcionando](capturas/08_nginx_navegador.png)
+```
 
 ---
 
-## 3.2. Servidor de aplicaciones Tomcat
+## 3.2. Servidor de aplicaciones con Tomcat
 
-Comando ejecutado:
+Comando:
 
 ```bash
 docker run -d -p 8081:8080 --name appserver tomcat
 ```
 
-Acceso en el navegador:
+Acceso desde el navegador:
 **[http://localhost:8081](http://localhost:8081)**
 
-**Captura:**
+### 📸 Captura necesaria
+
+Debe verse la página inicial de Tomcat con el logo del gato.
+
+```
 ![Tomcat funcionando](capturas/09_tomcat_navegador.png)
+```
 
 ---
 
-## 3.3. Verificación de contenedores activos
+## 3.3. Verificar contenedores activos
+
+Comando:
 
 ```bash
 docker ps
 ```
 
-**Captura:**
+### 📸 Captura necesaria
+
+Debe verse que están corriendo los contenedores:
+
+* `webserver` (nginx)
+* `appserver` (tomcat)
+
+```
 ![docker ps](capturas/07_docker_ps.png)
+```
 
 ---
 
-# 4. Requerimientos mínimos para implantar una aplicación web
+# 4. Requerimientos mínimos para desplegar una aplicación web
+
+A partir de lo trabajado en la práctica, estos serían los requisitos básicos para montar una aplicación web usando este tipo de entorno.
 
 ## 4.1. Requisitos de hardware
 
-* CPU: 2 núcleos
-* Memoria RAM: 4 GB mín.
-* Almacenamiento: 50 GB
-* Virtualización activada en BIOS
+* CPU: mínimo 2 núcleos
+* RAM: mínimo 4 GB
+* Disco: 50 GB
+* Virtualización habilitada (BIOS/UEFI)
 
 ## 4.2. Requisitos de software
 
 * VirtualBox
-* Ubuntu 24.04
-* Docker y contenedores Nginx/Tomcat
+* Ubuntu 24.04.3 LTS
+* Docker Desktop
+* Imágenes oficiales: Nginx y Tomcat
 
 ## 4.3. Infraestructura de red
 
-* Modo NAT en la máquina virtual
+* La VM funciona con NAT
 * Puertos expuestos:
 
-  * 8080 → Nginx
-  * 8081 → Tomcat
-* Acceso desde navegador del host
+  * 8080 para Nginx
+  * 8081 para Tomcat
 
-## 4.4. Configuración del servidor web y de aplicaciones
+## 4.4. Configuración del entorno
 
-* **Nginx:** atiende peticiones HTTP y sirve contenido web.
-* **Tomcat:** ejecuta aplicaciones Java y servlets.
-* Ambos desplegados como contenedores Docker independientes.
+* Nginx sirve contenido web estático
+* Tomcat ejecuta aplicaciones Java
+* Cada servicio va en su propio contenedor
 
 ## 4.5. Seguridad y mantenimiento
 
-* Uso de imágenes oficiales desde Docker Hub
-* Actualizaciones regulares:
-
-  ```bash
-  sudo apt update
-  docker pull nginx
-  docker pull tomcat
-  ```
-* Contenedores aislados sin privilegios extra
-* No exponer puertos innecesarios
+* Usar imágenes oficiales y actualizadas
+* Actualizar el sistema periódicamente
+* Mantener los contenedores aislados
+* No abrir puertos innecesarios
 
 ---
 
 # 5. Conclusión
 
-En esta práctica se ha realizado la instalación completa de un entorno virtualizado con Ubuntu y la configuración de Docker para desplegar un servidor web (Nginx) y un servidor de aplicaciones (Tomcat). Se han comprobado su funcionamiento mediante accesos desde el navegador y se han documentado los comandos y capturas correspondientes.
+En esta práctica he podido instalar Ubuntu 24.04.3 LTS en una máquina virtual, instalar Docker dentro del sistema y poner en marcha dos servicios diferentes (Nginx y Tomcat) mediante contenedores. Ambos funcionaron correctamente y pude acceder a ellos desde el navegador del host. La práctica me ha servido para entender mejor cómo funciona la virtualización y cómo facilita Docker el despliegue de servicios.
