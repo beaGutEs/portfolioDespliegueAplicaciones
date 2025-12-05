@@ -13,7 +13,7 @@ En esta parte de la práctica he instalado **Ubuntu 24.04.3 LTS** dentro de una 
 
 ## 1.1. Creación de la máquina virtual
 
-Primero creé una nueva máquina virtual con estos parámetros:
+Primero creé una nueva máquina virtual con estos parámetros mínimos, yo los he adaptado a mis necesidades:
 
 * **Nombre:** Ubuntu-DAW2DAW
 * **Tipo:** Linux
@@ -63,54 +63,37 @@ Después instalé Docker Desktop dentro de Ubuntu para poder trabajar con conten
 
 ## 2.1. Actualizar paquetes del sistema
 
-```bash
-sudo apt update && sudo apt upgrade -y
-```
+<img width="1366" height="726" alt="11" src="https://github.com/user-attachments/assets/035249e0-66a5-4a14-98b1-2d8af9b7ef45" />
+
+<img width="1366" height="729" alt="12" src="https://github.com/user-attachments/assets/5fce348a-c638-4e1b-9a37-630740befd3d" />
+
+<img width="1366" height="727" alt="13" src="https://github.com/user-attachments/assets/5b2b6aa2-5dab-4524-8f2a-13f3effbf3fe" />
+
+<img width="1366" height="707" alt="14" src="https://github.com/user-attachments/assets/9764f9b9-8009-4485-93e8-537a7a2f22a0" />
+
+<img width="1366" height="727" alt="15" src="https://github.com/user-attachments/assets/19b87ed4-f881-453e-b3d5-4046e4282a02" />
+
+<img width="932" height="319" alt="15_2" src="https://github.com/user-attachments/assets/7f40c940-d219-45fe-8b0c-e01fc9081503" />
+
+<img width="1366" height="729" alt="16" src="https://github.com/user-attachments/assets/75238fa4-c310-4145-994a-01012ddb23b8" />
 
 ## 2.2. Instalar dependencias necesarias
 
-```bash
-sudo apt install ca-certificates curl gnupg -y
-```
+<img width="1366" height="731" alt="17" src="https://github.com/user-attachments/assets/fc2656a8-b971-4395-b75a-4885728b4a1d" />
+
+<img width="1366" height="730" alt="18" src="https://github.com/user-attachments/assets/65120391-200b-4ad2-8fef-fd219eed495c" />
+
+<img width="1366" height="726" alt="19" src="https://github.com/user-attachments/assets/bf8ed04a-af03-451b-b196-9c9c2aad3496" />
 
 ## 2.3. Instalar Docker usando el script oficial
 
-```bash
-curl -fsSL https://get.docker.com | sudo sh
-sudo apt install docker-desktop -y
-```
+<img width="1366" height="730" alt="20" src="https://github.com/user-attachments/assets/64e741c0-28e6-469d-a0ff-e9ea98b218ba" />
 
----
+<img width="1366" height="732" alt="21" src="https://github.com/user-attachments/assets/fe10175f-00e2-40f6-86f4-88088c44f160" />
 
 ## 2.4. Comprobación del funcionamiento
 
-### Versión de Docker
-
-```bash
-docker --version
-```
-
-### 📸 Captura necesaria
-
-Debe verse el comando y la versión instalada de Docker.
-
-```
-![Docker versión](capturas/05_docker_version.png)
-```
-
-### Contenedor de prueba
-
-```bash
-docker run hello-world
-```
-
-### 📸 Captura necesaria
-
-Debe verse el mensaje “Hello from Docker!”.
-
-```
-![Hello world Docker](capturas/06_docker_hello_world.png)
-```
+<img width="1366" height="730" alt="22" src="https://github.com/user-attachments/assets/2872a726-be41-43a9-862c-f445dcc3ba62" />
 
 ---
 
@@ -118,64 +101,21 @@ Debe verse el mensaje “Hello from Docker!”.
 
 ## 3.1. Servidor web con Nginx
 
-Comando:
-
-```bash
-docker run -d -p 8080:80 --name webserver nginx
-```
-
-Acceso desde el navegador:
-**[http://localhost:8080](http://localhost:8080)**
-
-### 📸 Captura necesaria
-
-Debe verse la página de bienvenida de Nginx.
-
-```
-![Nginx funcionando](capturas/08_nginx_navegador.png)
-```
-
----
+<img width="1218" height="628" alt="24" src="https://github.com/user-attachments/assets/7e46551f-a5c4-4567-919f-5d3d9d792600" />
 
 ## 3.2. Servidor de aplicaciones con Tomcat
 
-Comando:
-
-```bash
-docker run -d -p 8081:8080 --name appserver tomcat
-```
-
-Acceso desde el navegador:
-**[http://localhost:8081](http://localhost:8081)**
-
-### 📸 Captura necesaria
-
-Debe verse la página inicial de Tomcat con el logo del gato.
-
-```
-![Tomcat funcionando](capturas/09_tomcat_navegador.png)
-```
-
----
+<img width="1077" height="625" alt="26" src="https://github.com/user-attachments/assets/9af2cefd-b4ed-4980-8ab3-5851d3d274c5" />
 
 ## 3.3. Verificar contenedores activos
 
-Comando:
+<img width="1366" height="731" alt="27" src="https://github.com/user-attachments/assets/41fc4284-42e0-4016-8573-e935b052bb35" />
 
-```bash
-docker ps
-```
+<img width="1366" height="262" alt="28" src="https://github.com/user-attachments/assets/d71684e6-fb94-4cf9-b5d5-7f6b2122cf5c" />
 
-### 📸 Captura necesaria
+<img width="1366" height="727" alt="29" src="https://github.com/user-attachments/assets/d155b184-d52d-4c9c-aec6-9948b9318c14" />
 
-Debe verse que están corriendo los contenedores:
-
-* `webserver` (nginx)
-* `appserver` (tomcat)
-
-```
-![docker ps](capturas/07_docker_ps.png)
-```
+<img width="1366" height="730" alt="30" src="https://github.com/user-attachments/assets/cd173bc4-d76c-4d0d-9ea1-5c918b206ff2" />
 
 ---
 
