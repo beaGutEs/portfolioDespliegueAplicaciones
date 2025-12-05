@@ -12,7 +12,9 @@ Instalé Apache desde los repositorios de Ubuntu:
 
 <img width="1365" height="658" alt="2025-12-05_17-27" src="https://github.com/user-attachments/assets/d694cf77-4e89-4ce2-a606-fe204b057d50" />
 
+
 Para comprobar que el servicio quedó activo:
+
 
 <img width="1366" height="656" alt="2025-12-05_17-26" src="https://github.com/user-attachments/assets/26c3dd54-b1d5-43a3-9cb7-e5857410f5d5" />
 
@@ -22,45 +24,55 @@ Para comprobar que el servicio quedó activo:
 
 Una vez instalado Apache, verifiqué su funcionamiento tanto desde la propia máquina virtual como desde el equipo anfitrión. Dado que la red de la máquina virtual está configurada en modo NAT, fue necesario habilitar un reenvío de puertos para permitir el acceso desde el host.
 
-Comprobación desde la máquina virtual (Ubuntu)
+### Comprobación desde la máquina virtual (Ubuntu)
 
 Dentro de la máquina virtual abrí Firefox y accedí a:
 
+```
 http://localhost
+```
 
 o:
 
+```
 http://127.0.0.1
+```
 
-Apache respondió correctamente mostrando la página por defecto instalada con el paquete apache2.
+Apache respondió correctamente mostrando la página por defecto instalada con el paquete `apache2`.
 
 <img width="1366" height="678" alt="2025-12-05_17-33" src="https://github.com/user-attachments/assets/54fd52cc-383e-4452-b09c-e2efedce81ed" />
 
-Comprobación desde el equipo anfitrión (Linux)
+---
+
+### Comprobación desde el equipo anfitrión (Linux)
 
 En el modo NAT, la IP interna de la máquina virtual (habitualmente 10.0.2.15) no es accesible desde el exterior, por lo que se configuró un reenvío de puertos en VirtualBox para poder acceder al puerto 80 de la VM. La regla añadida fue la siguiente:
 
-Protocolo: TCP
+* Protocolo: TCP
 
-Puerto del host: 8080
+* Puerto del host: 8080
 
-IP del invitado: 10.0.2.15
+* IP del invitado: 10.0.2.15
 
-Puerto del invitado: 80
+* Puerto del invitado: 80
 
 <img width="1366" height="727" alt="2025-12-05_17-39" src="https://github.com/user-attachments/assets/5844099d-4099-41b6-a569-cb1aa7a659ec" />
 
 Tras aplicar la regla, el acceso desde el navegador del sistema anfitrión se realizó mediante:
 
+```
 http://localhost:8080
+```
 
 y se obtuvo la misma página por defecto de Apache.
 
 <img width="1366" height="678" alt="2025-12-05_17-33" src="https://github.com/user-attachments/assets/a252b872-635f-40c1-a425-a3c0d37208f4" />
 
-Observaciones
+---
 
-El acceso directo mediante http://localhost en el host no funcionaba inicialmente porque NAT no expone el puerto 80 del invitado de forma automática. La configuración del reenvío de puertos resolvió este problema y permitió continuar con las pruebas de conectividad necesarias.
+### Observaciones
+
+El acceso directo mediante `http://localhost` en el host no funcionaba inicialmente porque NAT no expone el puerto 80 del invitado de forma automática. La configuración del reenvío de puertos resolvió este problema y permitió continuar con las pruebas de conectividad necesarias.
 
 ---
 
@@ -73,88 +85,20 @@ Creé el archivo:
 ```bash
 sudo nano /var/www/html/index.html
 ```
-
-## ✔ **Página web personalizada**
-
-Aquí tienes la página creada. Es sencilla, con un estilo básico, visual y sin nada que parezca generado automáticamente:
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Práctica Apache – DAW</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        main {
-            width: 80%;
-            margin: 30px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        h1 {
-            margin-top: 0;
-        }
-        p {
-            line-height: 1.6;
-        }
-        footer {
-            margin-top: 40px;
-            text-align: center;
-            color: #666;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Servidor Apache – Práctica DAW</h1>
-    </header>
-
-    <main>
-        <h2>Bienvenido</h2>
-        <p>
-            Esta página forma parte de la práctica de configuración del servidor web Apache.
-            Está personalizada y sirve como prueba de que el servidor está configurado correctamente.
-        </p>
-
-        <p>
-            El objetivo es aprender a modificar el contenido alojado en <code>/var/www/html</code> 
-            y comprobar que Apache sirve la página de forma correcta.
-        </p>
-    </main>
-
-    <footer>
-        © Práctica DAW – Apache HTTP Server
-    </footer>
-</body>
-</html>
-```
+ 
+<img width="1366" height="691" alt="2025-12-05_17-53" src="https://github.com/user-attachments/assets/76187d07-3dd9-48b4-a5ef-fed6cd941910" />
 
 Guardé y actualicé con:
 
-```bash
-sudo systemctl restart apache2
-```
+<img width="1366" height="693" alt="2025-12-05_18-06" src="https://github.com/user-attachments/assets/6774049d-5c8e-46ce-808b-5a4aa8cec405" />
 
-### 📸 Captura requerida
+Y la página web resultante se ve así, tanto en MV
 
-Debe verse tu página personalizada en el navegador.
+<img width="1366" height="699" alt="2025-12-05_18-07" src="https://github.com/user-attachments/assets/74f0c2fa-69a2-46ce-8d5a-7e6e12c425de" /> 
 
-```
-![Página web personalizada](capturas/apache_custom_page.png)
-```
+como en local:
+
+<img width="1366" height="768" alt="2025-12-05_18-09" src="https://github.com/user-attachments/assets/b70d5959-fc44-4300-8a5c-a5b062be03b8" />
 
 ---
 
