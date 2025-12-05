@@ -106,46 +106,22 @@ como en local:
 
 Creé un nuevo host virtual para alojar un sitio independiente.
 
-1. Creé un nuevo directorio:
+1. Creé un nuevo directorio y añadí un archivo HTML simple:
 
-```bash
-sudo mkdir /var/www/misitio
-sudo chown -R $USER:$USER /var/www/misitio
-```
+<img width="1366" height="694" alt="2025-12-05_18-14" src="https://github.com/user-attachments/assets/0796a05c-3c20-40be-997b-abc8bcd9eb50" />
 
-2. Añadí un archivo HTML simple:
+2. Creé un archivo de configuración:
 
-```bash
-echo "<h1>Mi Sitio VirtualHost</h1>" > /var/www/misitio/index.html
-```
+<img width="1366" height="698" alt="2025-12-05_18-19" src="https://github.com/user-attachments/assets/a0348808-dc1e-4240-b7ae-5d429efd51b5" />
 
-3. Creé un archivo de configuración:
+3. Activé el sitio:
 
-```bash
-sudo nano /etc/apache2/sites-available/misitio.conf
-```
+<img width="1366" height="701" alt="2025-12-05_18-20" src="https://github.com/user-attachments/assets/0d7e7ee4-e786-4668-aed9-76c907556539" />
 
-Contenido:
 
-```
-<VirtualHost *:80>
-    ServerName misitio.local
-    DocumentRoot /var/www/misitio
-</VirtualHost>
-```
+4. Añadí el dominio al archivo hosts:
 
-4. Activé el sitio:
-
-```bash
-sudo a2ensite misitio.conf
-sudo systemctl reload apache2
-```
-
-5. Añadí el dominio al archivo hosts:
-
-```bash
-sudo nano /etc/hosts
-```
+<img width="1366" height="673" alt="2025-12-05_18-25" src="https://github.com/user-attachments/assets/158aac26-61da-496a-bdc4-d37b212e248e" />
 
 Y añadí:
 
@@ -153,13 +129,7 @@ Y añadí:
 127.0.0.1   misitio.local
 ```
 
-### 📸 Captura requerida
-
-Debe verse el sitio cargado en el navegador con la URL `http://misitio.local`.
-
-```
-![VirtualHost funcionando](capturas/apache_vhost.png)
-```
+<img width="1366" height="727" alt="2025-12-05_18-26" src="https://github.com/user-attachments/assets/d722db97-a927-4d66-9654-7d25e8979832" />
 
 ---
 
