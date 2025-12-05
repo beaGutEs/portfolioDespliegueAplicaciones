@@ -8,48 +8,59 @@ A continuación se detalla el proceso de instalación, configuración y pruebas 
 
 Instalé Apache desde los repositorios de Ubuntu:
 
-```bash
-sudo apt update
-sudo apt install apache2 -y
-```
+<img width="1366" height="658" alt="2025-12-05_17-27_1" src="https://github.com/user-attachments/assets/c754657a-188f-4115-a029-5b22182cdd24" />
+
+<img width="1365" height="658" alt="2025-12-05_17-27" src="https://github.com/user-attachments/assets/d694cf77-4e89-4ce2-a606-fe204b057d50" />
 
 Para comprobar que el servicio quedó activo:
 
-```bash
-sudo systemctl status apache2
-```
-
-### 📸 Captura requerida
-
-Debe verse el estado “active (running)”.
-
-```
-![Apache running](capturas/apache_running.png)
-```
+<img width="1366" height="656" alt="2025-12-05_17-26" src="https://github.com/user-attachments/assets/26c3dd54-b1d5-43a3-9cb7-e5857410f5d5" />
 
 ---
 
-# 2.2. Comprobación desde el navegador
+## 2.2. Comprobación desde el navegador
 
-Abrí el navegador en la máquina host y accedí a:
+Una vez instalado Apache, verifiqué su funcionamiento tanto desde la propia máquina virtual como desde el equipo anfitrión. Dado que la red de la máquina virtual está configurada en modo NAT, fue necesario habilitar un reenvío de puertos para permitir el acceso desde el host.
 
-```
-http://<IP-DE-LA-MAQUINA-VIRTUAL>/
-```
+Comprobación desde la máquina virtual (Ubuntu)
 
-También probé desde la propia VM usando:
+Dentro de la máquina virtual abrí Firefox y accedí a:
 
-```
 http://localhost
-```
 
-### 📸 Captura requerida
+o:
 
-Debe verse la página por defecto “Apache2 Ubuntu Default Page”.
+http://127.0.0.1
 
-```
-![Página por defecto de Apache](capturas/apache_default_page.png)
-```
+Apache respondió correctamente mostrando la página por defecto instalada con el paquete apache2.
+
+<img width="1366" height="678" alt="2025-12-05_17-33" src="https://github.com/user-attachments/assets/54fd52cc-383e-4452-b09c-e2efedce81ed" />
+
+Comprobación desde el equipo anfitrión (Linux)
+
+En el modo NAT, la IP interna de la máquina virtual (habitualmente 10.0.2.15) no es accesible desde el exterior, por lo que se configuró un reenvío de puertos en VirtualBox para poder acceder al puerto 80 de la VM. La regla añadida fue la siguiente:
+
+Protocolo: TCP
+
+Puerto del host: 8080
+
+IP del invitado: 10.0.2.15
+
+Puerto del invitado: 80
+
+<img width="1366" height="727" alt="2025-12-05_17-39" src="https://github.com/user-attachments/assets/5844099d-4099-41b6-a569-cb1aa7a659ec" />
+
+Tras aplicar la regla, el acceso desde el navegador del sistema anfitrión se realizó mediante:
+
+http://localhost:8080
+
+y se obtuvo la misma página por defecto de Apache.
+
+<img width="1366" height="678" alt="2025-12-05_17-33" src="https://github.com/user-attachments/assets/a252b872-635f-40c1-a425-a3c0d37208f4" />
+
+Observaciones
+
+El acceso directo mediante http://localhost en el host no funcionaba inicialmente porque NAT no expone el puerto 80 del invitado de forma automática. La configuración del reenvío de puertos resolvió este problema y permitió continuar con las pruebas de conectividad necesarias.
 
 ---
 
