@@ -6,8 +6,8 @@ Portfolio para el módulo de Despliegue de Aplicaciones Web del 2º curso del CF
 - [ENLACES UD1](UD1_GitHub_MarkDown/enlaces_UD1.md)
 
 ### UNIDAD DIDÁCTICA 2 - INTRODUCCIÓN A LAS APLICACIONES WEB
-- [DIARIO UD2](UD2_introducción_Aplicaciones_Web/diario_UD2.md)
-- [ENLACES UD2](UD2_introducción_Aplicaciones_Web/enlaces_UD2.md)
+- [DIARIO UD2](UD2_Introducción_Aplicaciones_Web/diario_UD2.md)
+- [ENLACES UD2](UD2_Introducción_Aplicaciones_Web/enlaces_UD2.md)
 
 ### UNIDAD DIDÁCTICA 3 - APACHE
 - [DIARIO UD3](UD3_Apache/diario_UD3.md)
